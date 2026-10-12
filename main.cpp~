@@ -1,0 +1,62 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+struct Student {
+  char firstname[80];
+  char lastname[80];
+  int id;
+  float gpa;
+};
+
+void addStudent(vector<Student*> &v);
+
+int main () {
+  bool end = false;
+  while (end == false) {
+    vector<Student*> v;
+    char command[80];
+    cout << "Please enter a command: ";
+    cin >> command;
+    if (strcmp(command, "ADD") == 0) {
+      addStudent(v);
+    }
+    else if (strcmp(command, "Print") == 0) {
+      cout << "Students: " << endl;
+      cout << endl;
+      for (vector<Student*>::iterator it = v.begin(); it != v.end(); it ++) {
+	cout << (*it)->firstname <<  " " << (*it)->lastname << ", " << (*it)->id << ", " << (*it)->gpa << endl;
+      }
+    }
+    //COMPLETE!!
+    else if (strcmp(command, "DE
+  }
+}
+
+void addStudent(vector<Student*> &v) {
+  char firstname_copy[80];
+  char lastname_copy[80];
+  int id_copy;
+  float gpa_copy;
+  
+  Student *x = new Student();
+  
+  cout << "What is your first name? ";
+  cin >> firstname_copy;
+  cout << "What is your last name? ";
+  cin >> lastname_copy;
+  cout << "What is your id? ";
+  cin >> id_copy;
+  cout << "What is your gpa? ";
+  cin >> gpa_copy;
+
+  strcpy(x->firstname, firstname_copy);
+  strcpy(x->lastname, lastname_copy);
+  x->id = id_copy;
+  x->gpa = gpa_copy;
+
+  v.push_back(x);
+  
+}
