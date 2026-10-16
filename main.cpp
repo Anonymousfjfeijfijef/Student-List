@@ -1,3 +1,7 @@
+/*
+Prabhav Vasisht
+Student List: This code allows the user to alter a database of students through adding and removing students.
+*/
 #include <iostream>
 #include <vector>
 #include <cstring>
